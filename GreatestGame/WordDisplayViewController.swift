@@ -15,9 +15,11 @@ class WordDisplayViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     
     let game = GameController.getInstance
+    let bowl = BowlController.getInstance
     override func viewDidLoad() {
         super.viewDidLoad()
-        BowlController.getInstance.setDelegate(self)
+        bowl.setDelegate(self)
+        game.gameDelegate = self
         displayNextWord()
         // Do any additional setup after loading the view.
     }
@@ -28,19 +30,33 @@ class WordDisplayViewController: UIViewController {
     }
     
     func displayNextWord(){
-        wordLabel.text = BowlController.getInstance.getNextWord()
+        wordLabel.text = bowl.getNextWord()
+        let current = game.getCurrentPlayer().mName
+        playerNameLabel.text = current
     }
     
     @IBAction func NextWord(sender: AnyObject) {
         displayNextWord()
     }
+    
+    @IBAction func NextTurn(sender: AnyObject) {
+        game.nextTurn()
+    }
 }
 
 extension WordDisplayViewController: BowlDelegate{
     func bowlIsEmpty(emptyBowl: Bowl) {
-        print("Go to next Level")
-        // TODO: Go to next level
+        game.nextLevel()
+    }
+}
+
+extension WordDisplayViewController: GameControllerDelegate{
+    func turnFinished() {
+        bowl.putWordBack()
+        displayNextWord()
     }
     
-    
+    func gameFinished() {
+        
+    }
 }

@@ -34,8 +34,8 @@ class Team: NSObject {
         if mActivePlayer > 1 { mActivePlayer = 0}
     }
     
-    func getActivePlayerName() -> String{
-        return mPlayers[mActivePlayer].mName
+    func getActivePlayer() -> Person{
+        return mPlayers[mActivePlayer]
     }
     
     

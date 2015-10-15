@@ -9,8 +9,8 @@
 import UIKit
 
 protocol GameControllerDelegate{
-    func turnFinished(nextTeam: Team)
-    func levelFinished()
+    func turnFinished()
+    func gameFinished()
 }
 
 class GameController: NSObject {
@@ -20,6 +20,7 @@ class GameController: NSObject {
     
     let wordsPerPlayer = 5
     let numberOfPlayersPerTeam = 2
+    let numOfLevels = 3
     var turn = 0
     var level = 1
        
@@ -27,10 +28,16 @@ class GameController: NSObject {
         turn++
         if (turn > teams.getNumberOfTeams()-1) {
             turn = 0
-            level++
-            gameDelegate?.levelFinished()
         }
-        gameDelegate?.turnFinished(teams.getTeamForIndex(turn))
+        teams.getTeamForIndex(turn).nextPlayer()
+        gameDelegate?.turnFinished()
+    }
+    
+    func nextLevel(){
+        level++
+        if level > numOfLevels {
+            gameDelegate?.gameFinished()
+        }
     }
     
     func getTotalWords() -> Int{
@@ -38,6 +45,8 @@ class GameController: NSObject {
     }
     
     func getCurrentPlayer() -> Person{
-        return Person()
+        let currentTeam = teams.getTeamForIndex(turn)
+        return currentTeam.getActivePlayer()
     }
+    
 }

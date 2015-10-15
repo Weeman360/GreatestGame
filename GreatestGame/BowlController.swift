@@ -33,9 +33,16 @@ class BowlController: NSObject {
         mBowl.printCards()
     }
     
+    func putWordBack(){
+        if mCompletedBowl.cards.count > 0{
+            mBowl.addCard(mCompletedBowl.cards.removeLast())
+        }        
+    }
+    
     func getNextWord() -> String?{
         if let card = mBowl.popCard(){
             mCompletedBowl.addCard(card)
+            print("cards left: \(mBowl.cards.count)")
             return card.word
         }else{
             mBowlDelegate?.bowlIsEmpty(mBowl)
