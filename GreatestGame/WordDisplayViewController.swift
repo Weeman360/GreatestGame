@@ -21,6 +21,7 @@ class WordDisplayViewController: UIViewController {
         super.viewDidLoad()
         bowl.setDelegate(self)
         game.gameDelegate = self
+        levelLabel.text = "Level \(game.level)"
         game.startTimer()
         displayNextWord()
         // Do any additional setup after loading the view.
@@ -38,6 +39,7 @@ class WordDisplayViewController: UIViewController {
     }
     
     @IBAction func NextWord(sender: AnyObject) {
+        game.awardPoint()
         displayNextWord()
     }
 }
@@ -59,8 +61,17 @@ extension WordDisplayViewController: GameControllerDelegate{
         self.presentViewController(turnOverAlert, animated: true, completion: nil)
     }
     
+    func levelFinished() {
+        levelLabel.text = "Level \(game.level)"
+    }
+    
     func gameFinished() {
-        
+        game.teams.printTeams()
+        let turnOverAlert = UIAlertController(title: "Game Over!", message: "Scores\n\(game.teams.getScrores())", preferredStyle: UIAlertControllerStyle.Alert)
+        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { action in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }))
+        self.presentViewController(turnOverAlert, animated: true, completion: nil)
     }
     
     func tickTimer(secondsLeft: Int) {

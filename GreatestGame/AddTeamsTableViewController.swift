@@ -42,7 +42,6 @@ class AddTeamsTableViewController: UITableViewController {
         let team = teams.getTeamForIndex(indexPath.row)
         if team.mName == "" { team.mName = "Team \(indexPath.row + 1)" }
         cell.setupCell(team)
-        // Configure the cell...
 
         return cell
     }

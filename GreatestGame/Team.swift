@@ -30,6 +30,14 @@ class Team: NSObject {
         mPlayers[index].mName = newName
     }
     
+    func addPoint(){
+        score++;
+    }
+    
+    func getScore() -> Int{
+        return score
+    }
+    
     func nextPlayer(){
         mActivePlayer++;
         if mActivePlayer > 1 { mActivePlayer = 0}

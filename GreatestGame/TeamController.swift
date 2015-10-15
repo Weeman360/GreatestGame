@@ -31,13 +31,21 @@ class TeamController: NSObject {
     
     func printTeams(){
         for team in teams{
-            print("Team: \(team.mName)")
+            print("Team: \(team.mName) \tScore: \(team.score)")
             print("------------------------------")
             for player in team.mPlayers {
                 print(player.mName)
             }
             print("------------------------------")
         }
+    }
+    
+    func getScrores() -> String{
+        var str = ""
+        for team in teams{
+            str += "Team: \(team.mName) \tScore: \(team.score)\n"
+        }
+        return str
     }
 
 }

@@ -51,7 +51,7 @@ class BowlController: NSObject {
             
             mBowl.shuffleBowl()
             mBowl.printCards()
-            return nil
+            return getNextWord()
         }
     }
     
