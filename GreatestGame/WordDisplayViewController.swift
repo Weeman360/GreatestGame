@@ -21,15 +21,27 @@ class WordDisplayViewController: UIViewController {
         super.viewDidLoad()
         bowl.setDelegate(self)
         game.gameDelegate = self
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = "Greatest Game"
         levelLabel.text = "Level \(game.level)"
-        game.startTimer()
-        displayNextWord()
+        showGameStartDialog()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showGameStartDialog(){
+        let turnOverAlert = UIAlertController(title: "Let's Go!", message: "The game is about to start. Please give the phone to \(game.getCurrentPlayer().mName). Then press Ok to start", preferredStyle: UIAlertControllerStyle.Alert)
+        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { action in
+            self.game.startGame()
+            self.displayNextWord()
+        }))
+        self.presentViewController(turnOverAlert, animated: true, completion: nil)
+
+        
     }
     
     func displayNextWord(){

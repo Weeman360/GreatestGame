@@ -29,6 +29,10 @@ class GameController: NSObject {
     var turn = 0
     var level = 1
     
+    func startGame(){
+        startTimer()
+    }
+    
     func nextTurn(){
         turn++
         if (turn > teams.getNumberOfTeams()-1) {
