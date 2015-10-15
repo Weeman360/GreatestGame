@@ -13,6 +13,7 @@ class Team: NSObject {
     var mName: String!
     var mColor: UIColor!
     var mActivePlayer: Int = 0
+    var score = 0
     
     
     init(players: [Person]) {
@@ -37,7 +38,4 @@ class Team: NSObject {
     func getActivePlayer() -> Person{
         return mPlayers[mActivePlayer]
     }
-    
-    
-    
 }

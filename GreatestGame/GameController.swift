@@ -9,6 +9,7 @@
 import UIKit
 
 protocol GameControllerDelegate{
+    func tickTimer(secondsLeft: Int)
     func turnFinished()
     func gameFinished()
 }
@@ -18,12 +19,15 @@ class GameController: NSObject {
     var gameDelegate: GameControllerDelegate?
     var teams = TeamController.getInstance
     
+    var time = NSDate()
+    var ticker: NSTimer!
     let wordsPerPlayer = 5
     let numberOfPlayersPerTeam = 2
     let numOfLevels = 3
+    let timePerTurn = 30
     var turn = 0
     var level = 1
-       
+    
     func nextTurn(){
         turn++
         if (turn > teams.getNumberOfTeams()-1) {
@@ -47,6 +51,26 @@ class GameController: NSObject {
     func getCurrentPlayer() -> Person{
         let currentTeam = teams.getTeamForIndex(turn)
         return currentTeam.getActivePlayer()
+    }
+    
+    func startTimer(){
+        ticker = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: Selector("tickTimer"), userInfo: nil, repeats: true)
+        time = NSDate()
+    }
+    
+    func tickTimer(){
+        // Time passed in seconds
+        let timePassed = Int(NSDate().timeIntervalSinceDate(time))
+        let secondsLeft = timePerTurn - timePassed        
+        if secondsLeft <= 0 {
+            stopTimer()
+            nextTurn()
+        }
+        gameDelegate?.tickTimer(secondsLeft)
+    }
+    
+    func stopTimer(){
+        ticker.invalidate()
     }
     
 }

@@ -218,18 +218,19 @@
                                     <action selector="NextWord:" destination="NtL-wl-7Gy" eventType="touchUpInside" id="l1J-tA-N68"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGx-lL-hSK">
-                                <rect key="frame" x="20" y="475" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="NextTurn:" destination="NtL-wl-7Gy" eventType="touchUpInside" id="YAG-co-sYV"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHE-z5-R2g">
+                                <rect key="frame" x="287" y="553" width="28" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9H9-bx-29G" firstAttribute="top" secondItem="DHE-z5-R2g" secondAttribute="bottom" constant="20" id="5ut-na-cKf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gNi-om-nfT" secondAttribute="trailing" id="9Ms-Hj-1SG"/>
                             <constraint firstItem="3eZ-le-zuO" firstAttribute="top" secondItem="gNi-om-nfT" secondAttribute="bottom" constant="8" id="E4X-EJ-UbB"/>
+                            <constraint firstItem="DHE-z5-R2g" firstAttribute="centerX" secondItem="u0X-3D-56L" secondAttribute="centerX" id="FHR-oM-oNM"/>
                             <constraint firstItem="ivg-6e-bXL" firstAttribute="top" secondItem="YRz-j3-u0j" secondAttribute="bottom" constant="8" id="H5K-49-e5h"/>
                             <constraint firstAttribute="leadingMargin" secondItem="gNi-om-nfT" secondAttribute="leading" id="LZD-bv-xaZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hj0-vs-6af" secondAttribute="trailing" id="Lqa-LL-F0L"/>
@@ -244,6 +245,7 @@
                     <connections>
                         <outlet property="levelLabel" destination="ivg-6e-bXL" id="TBI-uq-MXf"/>
                         <outlet property="playerNameLabel" destination="hj0-vs-6af" id="5n8-lI-ExB"/>
+                        <outlet property="timeLeftLabel" destination="DHE-z5-R2g" id="SII-7k-VI8"/>
                         <outlet property="wordLabel" destination="gNi-om-nfT" id="llA-F0-4mO"/>
                     </connections>
                 </viewController>

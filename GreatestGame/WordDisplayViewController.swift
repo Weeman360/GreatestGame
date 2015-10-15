@@ -13,6 +13,7 @@ class WordDisplayViewController: UIViewController {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var timeLeftLabel: UILabel!
     
     let game = GameController.getInstance
     let bowl = BowlController.getInstance
@@ -20,6 +21,7 @@ class WordDisplayViewController: UIViewController {
         super.viewDidLoad()
         bowl.setDelegate(self)
         game.gameDelegate = self
+        game.startTimer()
         displayNextWord()
         // Do any additional setup after loading the view.
     }
@@ -38,10 +40,6 @@ class WordDisplayViewController: UIViewController {
     @IBAction func NextWord(sender: AnyObject) {
         displayNextWord()
     }
-    
-    @IBAction func NextTurn(sender: AnyObject) {
-        game.nextTurn()
-    }
 }
 
 extension WordDisplayViewController: BowlDelegate{
@@ -53,10 +51,19 @@ extension WordDisplayViewController: BowlDelegate{
 extension WordDisplayViewController: GameControllerDelegate{
     func turnFinished() {
         bowl.putWordBack()
-        displayNextWord()
+        let turnOverAlert = UIAlertController(title: "Time's up!", message: "Please give the phone to \(game.getCurrentPlayer().mName)", preferredStyle: UIAlertControllerStyle.Alert)
+        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { action in
+            self.displayNextWord()
+            self.game.startTimer()
+        }))
+        self.presentViewController(turnOverAlert, animated: true, completion: nil)
     }
     
     func gameFinished() {
         
+    }
+    
+    func tickTimer(secondsLeft: Int) {
+        timeLeftLabel.text = "\(secondsLeft)"
     }
 }
