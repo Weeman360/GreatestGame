@@ -88,4 +88,8 @@ class AddTeamsTableViewController: UITableViewController {
     @IBAction func Next(sender: AnyObject) {
         teams.printTeams()
     }
+    @IBAction func Close(sender: AnyObject) {
+        teams.removeAllTeams()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

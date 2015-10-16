@@ -18,14 +18,15 @@ protocol GameControllerDelegate{
 class GameController: NSObject {
     static let getInstance = GameController()
     var gameDelegate: GameControllerDelegate?
-    var teams = TeamController.getInstance
+    let teams = TeamController.getInstance
+    let timer = TimeController.getInstance
+    let sounds = Sounds.getInstance
     
-    var time = NSDate()
     var ticker: NSTimer!
-    let wordsPerPlayer = 5
+    var wordsPerPlayer = 5
     let numberOfPlayersPerTeam = 2
-    let numOfLevels = 3
-    let timePerTurn = 30
+    var numOfLevels = 3
+    var timePerTurn = 30
     var turn = 0
     var level = 1
     
@@ -47,8 +48,10 @@ class GameController: NSObject {
         if level > numOfLevels {
             stopTimer()
             gameDelegate?.gameFinished()
+            sounds.playGameOver()
         }else{
             gameDelegate?.levelFinished()
+            sounds.playLevelEnd()
         }
     }
     
@@ -64,25 +67,28 @@ class GameController: NSObject {
     func awardPoint(){
         let currentTeam = teams.getTeamForIndex(turn)
         currentTeam.addPoint()
+        sounds.playPointAwarded()
     }
     
     // MARK: - Timer
     func startTimer(){
         ticker = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("tickTimer"), userInfo: nil, repeats: true)
-        time = NSDate()
+        timer.startTimer()
     }
     
     func pauseTimer(){
-        
+        timer.pauseTimer()
+        ticker.invalidate()
     }
     
     func resumeTimer(){
-        
+        ticker = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("tickTimer"), userInfo: nil, repeats: true)
+        timer.resumeTimer()
     }
     
     func tickTimer(){
         // Time passed in seconds
-        let timePassed = Int(NSDate().timeIntervalSinceDate(time))
+        let timePassed = Int(timer.getTimePassed())
         let secondsLeft = timePerTurn - timePassed        
         if secondsLeft <= 0 {
             stopTimer()
@@ -92,6 +98,7 @@ class GameController: NSObject {
     }
     
     func stopTimer(){
+        timer.stopTimer()
         ticker.invalidate()
     }
     

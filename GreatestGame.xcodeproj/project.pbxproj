@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08607B541BD0E32F00E4EA3B /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08607B521BD0E32F00E4EA3B /* Correct.wav */; settings = {ASSET_TAGS = (); }; };
+		08607B551BD0E32F00E4EA3B /* LevelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08607B531BD0E32F00E4EA3B /* LevelUp.wav */; settings = {ASSET_TAGS = (); }; };
+		08607B571BD0E46B00E4EA3B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */; };
+		08607B591BD0E4FD00E4EA3B /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08607B581BD0E4FD00E4EA3B /* Sounds.swift */; settings = {ASSET_TAGS = (); }; };
+		08607B5D1BD0EA8300E4EA3B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08607B5C1BD0EA8300E4EA3B /* Colors.swift */; settings = {ASSET_TAGS = (); }; };
+		08607B5F1BD0EB9500E4EA3B /* GameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08607B5E1BD0EB9500E4EA3B /* GameOver.wav */; settings = {ASSET_TAGS = (); }; };
 		087EEE1E1BCD1DB3007606CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EEE1D1BCD1DB3007606CC /* AppDelegate.swift */; };
 		087EEE231BCD1DB3007606CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087EEE211BCD1DB3007606CC /* Main.storyboard */; };
 		087EEE251BCD1DB3007606CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087EEE241BCD1DB3007606CC /* Assets.xcassets */; };
@@ -25,6 +31,9 @@
 		087EEE691BCE7EDE007606CC /* AddTeamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EEE681BCE7EDE007606CC /* AddTeamsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		087EEE6C1BCE7F6E007606CC /* AddTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EEE6B1BCE7F6E007606CC /* AddTeamTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		087EEE6E1BCE84BC007606CC /* TeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EEE6D1BCE84BC007606CC /* TeamController.swift */; settings = {ASSET_TAGS = (); }; };
+		08E8FB281BCFE400008832D8 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8FB271BCFE400008832D8 /* RulesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		08E8FB2A1BCFE503008832D8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8FB291BCFE503008832D8 /* SettingsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		08E8FB2E1BD0D0EB008832D8 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8FB2D1BD0D0EB008832D8 /* TimeController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08607B521BD0E32F00E4EA3B /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
+		08607B531BD0E32F00E4EA3B /* LevelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LevelUp.wav; sourceTree = "<group>"; };
+		08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		08607B581BD0E4FD00E4EA3B /* Sounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		08607B5C1BD0EA8300E4EA3B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		08607B5E1BD0EB9500E4EA3B /* GameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameOver.wav; sourceTree = "<group>"; };
 		087EEE1A1BCD1DB3007606CC /* GreatestGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatestGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		087EEE1D1BCD1DB3007606CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		087EEE221BCD1DB3007606CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +84,9 @@
 		087EEE681BCE7EDE007606CC /* AddTeamsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamsTableViewController.swift; sourceTree = "<group>"; };
 		087EEE6B1BCE7F6E007606CC /* AddTeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamTableViewCell.swift; sourceTree = "<group>"; };
 		087EEE6D1BCE84BC007606CC /* TeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamController.swift; sourceTree = "<group>"; };
+		08E8FB271BCFE400008832D8 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		08E8FB291BCFE503008832D8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		08E8FB2D1BD0D0EB008832D8 /* TimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08607B571BD0E46B00E4EA3B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +115,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08607B511BD0E12C00E4EA3B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				08607B5E1BD0EB9500E4EA3B /* GameOver.wav */,
+				08607B521BD0E32F00E4EA3B /* Correct.wav */,
+				08607B531BD0E32F00E4EA3B /* LevelUp.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		087EEE111BCD1DB3007606CC = {
 			isa = PBXGroup;
 			children = (
+				08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */,
 				087EEE1C1BCD1DB3007606CC /* GreatestGame */,
 				087EEE311BCD1DB3007606CC /* GreatestGameTests */,
 				087EEE3C1BCD1DB3007606CC /* GreatestGameUITests */,
@@ -156,6 +186,8 @@
 				087EEE561BCD272D007606CC /* AddWordsViewController.swift */,
 				087EEE5E1BCD34F2007606CC /* WordDisplayViewController.swift */,
 				087EEE681BCE7EDE007606CC /* AddTeamsTableViewController.swift */,
+				08E8FB271BCFE400008832D8 /* RulesViewController.swift */,
+				08E8FB291BCFE503008832D8 /* SettingsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -191,6 +223,7 @@
 		087EEE4F1BCD1E6D007606CC /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				08607B511BD0E12C00E4EA3B /* Sounds */,
 				087EEE241BCD1DB3007606CC /* Assets.xcassets */,
 			);
 			name = Assests;
@@ -202,6 +235,9 @@
 				087EEE591BCD2798007606CC /* BowlController.swift */,
 				087EEE601BCD449C007606CC /* GameController.swift */,
 				087EEE6D1BCE84BC007606CC /* TeamController.swift */,
+				08E8FB2D1BD0D0EB008832D8 /* TimeController.swift */,
+				08607B581BD0E4FD00E4EA3B /* Sounds.swift */,
+				08607B5C1BD0EA8300E4EA3B /* Colors.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -326,8 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				087EEE281BCD1DB3007606CC /* LaunchScreen.storyboard in Resources */,
+				08607B541BD0E32F00E4EA3B /* Correct.wav in Resources */,
+				08607B5F1BD0EB9500E4EA3B /* GameOver.wav in Resources */,
 				087EEE251BCD1DB3007606CC /* Assets.xcassets in Resources */,
 				087EEE231BCD1DB3007606CC /* Main.storyboard in Resources */,
+				08607B551BD0E32F00E4EA3B /* LevelUp.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E8FB281BCFE400008832D8 /* RulesViewController.swift in Sources */,
+				08607B5D1BD0EA8300E4EA3B /* Colors.swift in Sources */,
 				087EEE5D1BCD320A007606CC /* WordValidator.swift in Sources */,
+				08E8FB2E1BD0D0EB008832D8 /* TimeController.swift in Sources */,
 				087EEE5F1BCD34F2007606CC /* WordDisplayViewController.swift in Sources */,
 				087EEE571BCD272D007606CC /* AddWordsViewController.swift in Sources */,
 				087EEE551BCD1FDA007606CC /* Bowl.swift in Sources */,
@@ -361,7 +403,9 @@
 				087EEE691BCE7EDE007606CC /* AddTeamsTableViewController.swift in Sources */,
 				087EEE611BCD449C007606CC /* GameController.swift in Sources */,
 				087EEE631BCD4560007606CC /* Person.swift in Sources */,
+				08607B591BD0E4FD00E4EA3B /* Sounds.swift in Sources */,
 				087EEE6E1BCE84BC007606CC /* TeamController.swift in Sources */,
+				08E8FB2A1BCFE503008832D8 /* SettingsTableViewController.swift in Sources */,
 				087EEE5A1BCD2798007606CC /* BowlController.swift in Sources */,
 				087EEE651BCD45C3007606CC /* Team.swift in Sources */,
 				087EEE1E1BCD1DB3007606CC /* AppDelegate.swift in Sources */,

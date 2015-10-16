@@ -21,6 +21,10 @@ class TeamController: NSObject {
         teams.removeAtIndex(index)
     }
     
+    func removeAllTeams(){
+        teams.removeAll()
+    }
+    
     func getTeamForIndex(index: Int) -> Team{
         return teams[index]
     }
@@ -43,7 +47,7 @@ class TeamController: NSObject {
     func getScrores() -> String{
         var str = ""
         for team in teams{
-            str += "Team: \(team.mName) \tScore: \(team.score)\n"
+            str += "Team: \(team.mName)   Score: \(team.score)\n"
         }
         return str
     }

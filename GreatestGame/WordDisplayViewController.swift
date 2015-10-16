@@ -34,20 +34,22 @@ class WordDisplayViewController: UIViewController {
     }
     
     func showGameStartDialog(){
-        let turnOverAlert = UIAlertController(title: "Let's Go!", message: "The game is about to start. Please give the phone to \(game.getCurrentPlayer().mName). Then press Ok to start", preferredStyle: UIAlertControllerStyle.Alert)
-        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { action in
+        presentAlert("Let's Go!", message: "The game is about to start. Please give the phone to \(game.getCurrentPlayer().mName). Then press Ok to start", handler: { action in
             self.game.startGame()
             self.displayNextWord()
-        }))
-        self.presentViewController(turnOverAlert, animated: true, completion: nil)
-
-        
+        })
     }
     
     func displayNextWord(){
         wordLabel.text = bowl.getNextWord()
         let current = game.getCurrentPlayer().mName
         playerNameLabel.text = current
+    }
+    
+    func presentAlert(title: String, message: String, handler: ((UIAlertAction) -> ())?){
+        let turnOverAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: handler))
+        self.presentViewController(turnOverAlert, animated: true, completion: nil)
     }
     
     @IBAction func NextWord(sender: AnyObject) {
@@ -65,25 +67,25 @@ extension WordDisplayViewController: BowlDelegate{
 extension WordDisplayViewController: GameControllerDelegate{
     func turnFinished() {
         bowl.putWordBack()
-        let turnOverAlert = UIAlertController(title: "Time's up!", message: "Please give the phone to \(game.getCurrentPlayer().mName)", preferredStyle: UIAlertControllerStyle.Alert)
-        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { action in
+        presentAlert("Time's up!", message: "Please give the phone to \(game.getCurrentPlayer().mName)", handler: { action in
             self.displayNextWord()
             self.game.startTimer()
-        }))
-        self.presentViewController(turnOverAlert, animated: true, completion: nil)
+        })
     }
     
     func levelFinished() {
         levelLabel.text = "Level \(game.level)"
+        game.pauseTimer()
+        presentAlert("Next level!", message: "We're going to level \(game.level) now, so remember to do level \(game.level) things. Don't worry, time has been paused", handler: { alert in
+            self.game.resumeTimer()
+        })
     }
     
     func gameFinished() {
         game.teams.printTeams()
-        let turnOverAlert = UIAlertController(title: "Game Over!", message: "Scores\n\(game.teams.getScrores())", preferredStyle: UIAlertControllerStyle.Alert)
-        turnOverAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: { action in
+        presentAlert("Game Over!", message: "Scores\n\(game.teams.getScrores())", handler: { action in
             self.navigationController?.popToRootViewControllerAnimated(true)
-        }))
-        self.presentViewController(turnOverAlert, animated: true, completion: nil)
+        })
     }
     
     func tickTimer(secondsLeft: Int) {
