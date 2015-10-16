@@ -31,6 +31,8 @@ class GameController: NSObject {
     var level = 1
     
     func startGame(){
+        level = 1
+        turn = 0
         startTimer()
     }
     
@@ -41,6 +43,7 @@ class GameController: NSObject {
         }
         teams.getTeamForIndex(turn).nextPlayer()
         gameDelegate?.turnFinished()
+        sounds.playBuzzer()
     }
     
     func nextLevel(){
@@ -49,6 +52,7 @@ class GameController: NSObject {
             stopTimer()
             gameDelegate?.gameFinished()
             sounds.playGameOver()
+            level = 1
         }else{
             gameDelegate?.levelFinished()
             sounds.playLevelEnd()

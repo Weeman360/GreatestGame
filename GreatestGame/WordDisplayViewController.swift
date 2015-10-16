@@ -24,7 +24,9 @@ class WordDisplayViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = "Greatest Game"
         levelLabel.text = "Level \(game.level)"
+        view.backgroundColor = Colors.colorForLevel(game.level)
         showGameStartDialog()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -79,6 +81,7 @@ extension WordDisplayViewController: GameControllerDelegate{
         presentAlert("Next level!", message: "We're going to level \(game.level) now, so remember to do level \(game.level) things. Don't worry, time has been paused", handler: { alert in
             self.game.resumeTimer()
         })
+        view.backgroundColor = Colors.colorForLevel(game.level)
     }
     
     func gameFinished() {

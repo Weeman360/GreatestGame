@@ -15,6 +15,7 @@ class Sounds: NSObject {
     private var correctSound: SystemSoundID = 0
     private var levelEnd: SystemSoundID = 0
     private var gameOver: SystemSoundID = 0
+    private var buzzer: SystemSoundID = 0
     
     override init() {
         super.init()
@@ -31,6 +32,10 @@ class Sounds: NSObject {
         let gameOverURL = NSURL(fileURLWithPath: gameOverSoundPath!)
         AudioServicesCreateSystemSoundID(gameOverURL, &gameOver)
         
+        let buzzerSoundPath = NSBundle.mainBundle().pathForResource("Buzzer", ofType: "wav")
+        let buzzerURL = NSURL(fileURLWithPath: buzzerSoundPath!)
+        AudioServicesCreateSystemSoundID(buzzerURL, &buzzer)
+        
     }
     
     func playPointAwarded(){
@@ -43,5 +48,9 @@ class Sounds: NSObject {
     
     func playGameOver(){
         AudioServicesPlaySystemSound(gameOver)
+    }
+    
+    func playBuzzer(){
+        AudioServicesPlaySystemSound(buzzer)
     }
 }

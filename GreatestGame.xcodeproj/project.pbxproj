@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0851F1D31BD0FF640068C27A /* Buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0851F1D21BD0FF640068C27A /* Buzzer.wav */; settings = {ASSET_TAGS = (); }; };
 		08607B541BD0E32F00E4EA3B /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08607B521BD0E32F00E4EA3B /* Correct.wav */; settings = {ASSET_TAGS = (); }; };
 		08607B551BD0E32F00E4EA3B /* LevelUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 08607B531BD0E32F00E4EA3B /* LevelUp.wav */; settings = {ASSET_TAGS = (); }; };
 		08607B571BD0E46B00E4EA3B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0851F1D21BD0FF640068C27A /* Buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Buzzer.wav; sourceTree = "<group>"; };
 		08607B521BD0E32F00E4EA3B /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
 		08607B531BD0E32F00E4EA3B /* LevelUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LevelUp.wav; sourceTree = "<group>"; };
 		08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -118,6 +120,7 @@
 		08607B511BD0E12C00E4EA3B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				0851F1D21BD0FF640068C27A /* Buzzer.wav */,
 				08607B5E1BD0EB9500E4EA3B /* GameOver.wav */,
 				08607B521BD0E32F00E4EA3B /* Correct.wav */,
 				08607B531BD0E32F00E4EA3B /* LevelUp.wav */,
@@ -128,7 +131,6 @@
 		087EEE111BCD1DB3007606CC = {
 			isa = PBXGroup;
 			children = (
-				08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */,
 				087EEE1C1BCD1DB3007606CC /* GreatestGame */,
 				087EEE311BCD1DB3007606CC /* GreatestGameTests */,
 				087EEE3C1BCD1DB3007606CC /* GreatestGameUITests */,
@@ -206,6 +208,7 @@
 		087EEE4D1BCD1E3D007606CC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08607B561BD0E46B00E4EA3B /* AudioToolbox.framework */,
 				087EEE291BCD1DB3007606CC /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -361,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0851F1D31BD0FF640068C27A /* Buzzer.wav in Resources */,
 				087EEE281BCD1DB3007606CC /* LaunchScreen.storyboard in Resources */,
 				08607B541BD0E32F00E4EA3B /* Correct.wav in Resources */,
 				08607B5F1BD0EB9500E4EA3B /* GameOver.wav in Resources */,
